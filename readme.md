@@ -49,6 +49,19 @@ Press `F5` (uses `.vscode/launch.json`). Browser opens at http://localhost:8501.
 streamlit run app.py
 ```
 
+### Deploy to Render
+
+The repository includes a `render.yaml` Blueprint for deploying this Streamlit app.
+
+1. Sign in to [Render](https://dashboard.render.com) and connect your GitHub account.
+2. Select **New → Blueprint**, then choose this repository and the `main` branch.
+3. Review the `vision-intelligence-dashboard` web service and apply the Blueprint.
+
+The service runs Streamlit on Render's assigned port. The Blueprint selects the
+`1c-2g` plan (1 CPU, 2 GB RAM) because the AI models need more memory than the
+free plan provides. Render charges for paid compute according to your account's
+current pricing.
+
 ---
 
 ## 🖥️ Modes

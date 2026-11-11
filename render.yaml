@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: vision-intelligence-dashboard
+    runtime: python
+    plan: 1c-2g
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
